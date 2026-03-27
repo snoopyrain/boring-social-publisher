@@ -5,10 +5,7 @@ version: 1.0.0
 metadata:
   openclaw:
     emoji: "🚀"
-    requires:
-      env:
-        - BORING_API_KEY
-    primaryEnv: BORING_API_KEY
+    homepage: https://boring-doc.aiagent-me.com/getting-started/mcp.html
 ---
 
 # Boring Social Publisher
@@ -17,10 +14,10 @@ Publish content to multiple social media platforms with a single message. Powere
 
 ## Prerequisites
 
-1. **Get your API key**: Sign in at [boring.aiagent-me.com](https://boring.aiagent-me.com), go to Settings, and generate an API key
-2. **Add Remote MCP**: In Claude Desktop or Claude Code settings, add the Boring MCP link: `https://boring.aiagent-me.com/mcp` (no local install needed)
-3. **Set** `BORING_API_KEY` environment variable
-4. **Connect your social accounts** at [boring.aiagent-me.com](https://boring.aiagent-me.com) — link Facebook Pages, Instagram Business, Threads, YouTube, TikTok, or X accounts via OAuth
+1. **Sign up** at [boring.aiagent-me.com](https://boring.aiagent-me.com) with Google
+2. **Connect your social accounts** — link Facebook Pages, Instagram Business, Threads, YouTube, TikTok, or X accounts via OAuth
+3. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL (looks like `https://boring.aiagent-me.com/mcp/t/xxxxx...`)
+4. **Add to Claude**: Paste the MCP link into Claude settings as a Connector — no install, no API key needed
 
 ## Workflow
 
