@@ -18,11 +18,8 @@ Publish content to multiple social media platforms with a single message. Powere
 ## Prerequisites
 
 1. **Get your API key**: Sign in at [boring.aiagent-me.com](https://boring.aiagent-me.com), go to Settings, and generate an API key
-2. **Install the MCP server**:
-   ```bash
-   pip install boring-mcp-server
-   ```
-3. **Set your API key** as environment variable `BORING_API_KEY`
+2. **Add Remote MCP**: In Claude Desktop or Claude Code settings, add the Boring MCP link: `https://boring.aiagent-me.com/mcp` (no local install needed)
+3. **Set** `BORING_API_KEY` environment variable
 4. **Connect your social accounts** at [boring.aiagent-me.com](https://boring.aiagent-me.com) — link Facebook Pages, Instagram Business, Threads, YouTube, TikTok, or X accounts via OAuth
 
 ## Workflow
