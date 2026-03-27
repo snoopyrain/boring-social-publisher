@@ -89,7 +89,7 @@ To schedule posts for later:
 
 | Error | Solution |
 |-------|----------|
-| `InvalidApiKey` | Check BORING_API_KEY is set correctly |
+| `InvalidApiKey` | MCP link may be invalid — regenerate it at boring.aiagent-me.com Settings |
 | `TokenExpired` | Ask user to reconnect the account at boring.aiagent-me.com |
 | `MediaRequired` | Instagram/TikTok require media — skip or ask user for an image |
 | `TextTooLong` | Truncate or split content for the platform |
