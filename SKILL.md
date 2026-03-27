@@ -6,17 +6,28 @@ metadata:
   openclaw:
     emoji: "🚀"
     homepage: https://boring-doc.aiagent-me.com/getting-started/mcp.html
+    requires:
+      config:
+        - MCP Connector link from boring.aiagent-me.com (contains embedded auth token)
 ---
 
 # Boring Social Publisher
 
 Publish content to multiple social media platforms with a single message. Powered by [Boring](https://boring-doc.aiagent-me.com) — a unified social media publishing API.
 
+## Security & Data Handling
+
+- **MCP link is a credential**: Your MCP Server URL (`https://boring.aiagent-me.com/mcp/t/xxxxx...`) contains an embedded authentication token. Treat it like a password — do not share it publicly. You can regenerate it anytime in Settings.
+- **Media uploads**: When you provide local files or URLs, they are uploaded to Boring's Google Cloud Storage (`boring.aiagent-me.com`) to make them accessible for publishing to social platforms. This is required because social media APIs need publicly accessible media URLs.
+- **Data flow**: Your post content and media are sent from Boring's server to the social media platform APIs (Facebook, Instagram, Threads, YouTube, TikTok, X) on your behalf via your connected OAuth tokens.
+- **No local credentials**: This skill does not require any local API keys or environment variables. All authentication is embedded in the MCP link.
+- **Privacy**: Uploaded media is stored in Google Cloud Storage for publishing purposes. Boring does not use your content for any other purpose.
+
 ## Prerequisites
 
 1. **Sign up** at [boring.aiagent-me.com](https://boring.aiagent-me.com) with Google
 2. **Connect your social accounts** — link Facebook Pages, Instagram Business, Threads, YouTube, TikTok, or X accounts via OAuth
-3. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL (looks like `https://boring.aiagent-me.com/mcp/t/xxxxx...`)
+3. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL (contains your auth token — treat it like a password)
 4. **Add to Claude**: Paste the MCP link into Claude settings as a Connector — no install, no API key needed
 
 ## Workflow
