@@ -1,6 +1,6 @@
 ---
-name: boring-social-publisher
-description: "Publish social media posts to multiple platforms at once using Boring. Use when the user says 'post to social media', 'publish everywhere', 'cross-post', 'share on all platforms', 'publish to Facebook and Instagram', or wants to distribute content across Facebook, Instagram, Threads, YouTube, TikTok, or X simultaneously."
+name: boring-social-media-publisher
+description: "Publish social media posts to multiple platforms at once. Use when the user says 'post to social media', 'publish everywhere', 'cross-post', 'share on all platforms', 'publish to Facebook and Instagram', or wants to distribute content across Facebook, Instagram, Threads, YouTube, TikTok, or X simultaneously."
 version: 1.0.0
 metadata:
   openclaw:
@@ -17,11 +17,12 @@ Publish content to multiple social media platforms with a single message. Powere
 
 ## Security & Data Handling
 
-- **MCP link is a credential**: Your MCP Server URL (`https://boring.aiagent-me.com/mcp/t/xxxxx...`) contains an embedded authentication token. Treat it like a password — do not share it publicly. You can regenerate it anytime in Settings.
-- **Media uploads**: When you provide local files or URLs, they are uploaded to Boring's Google Cloud Storage (`boring.aiagent-me.com`) to make them accessible for publishing to social platforms. This is required because social media APIs need publicly accessible media URLs.
-- **Data flow**: Your post content and media are sent from Boring's server to the social media platform APIs (Facebook, Instagram, Threads, YouTube, TikTok, X) on your behalf via your connected OAuth tokens.
-- **No local credentials**: This skill does not require any local API keys or environment variables. All authentication is embedded in the MCP link.
-- **Privacy**: Uploaded media is stored in Google Cloud Storage for publishing purposes. Boring does not use your content for any other purpose.
+- **MCP link is a credential**: Your MCP Server URL (`https://boring.aiagent-me.com/mcp/t/xxxxx...`) contains an embedded authentication token. Treat it like a password — do not share it publicly.
+- **Token scope**: The embedded token grants **publish access** to your connected social media accounts. It can create posts, upload media, and manage scheduled posts on the platforms you have connected. It cannot access your social media passwords or modify account settings.
+- **Token storage**: The token is stored server-side in Boring's database (MongoDB on DigitalOcean). It is never written to your local filesystem. You can regenerate or revoke it anytime at [boring.aiagent-me.com/settings](https://boring.aiagent-me.com/settings).
+- **Data flow**: Analytics queries are sent from Boring's server (Google Cloud, us-central1) to the platform's API on your behalf. Only performance metrics are retrieved — no content is uploaded or modified.
+- **No local credentials**: No local API keys, environment variables, or secrets are needed. All auth is embedded in the MCP link.
+- **Third-party service**: This skill relies on [Boring](https://boring.aiagent-me.com), an open-source social media management tool. Source code: [github.com/snoopyrain](https://github.com/snoopyrain).
 
 ## Prerequisites
 
